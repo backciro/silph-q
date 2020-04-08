@@ -1,0 +1,76 @@
+name: SILPH_Q
+description: Revolutionary Handtype
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  encrypt: ^4.0.0
+  uuid: ^2.0.4
+  qr_flutter: ^3.2.0
+  dio: ^3.0.9
+  rxdart: ^0.23.1
+  bloc_pattern: ^2.5.1
+  fab_circular_menu: ^1.0.0
+  zefyr: 0.10.0
+
+  flutter:
+    sdk: flutter
+
+
+dev_dependencies:
+  mockito: ^4.1.1
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/veliero9.jpg
+    - assets/definitiva.jpg
+    - assets/image_01.png
+    - assets/image_02.jpg
+    - assets/image_03.jpg
+    - assets/image_04.jpg
+
+  fonts:
+    - family: SF-Pro-Text-Regular
+      fonts:
+        - asset: assets/SF-Pro-Text-Regular.otf
+
+    - family: Orbitron-black
+      fonts:
+        - asset: assets/orbitron-black.ttf
+
+    - family: Cedarville
+      fonts:
+        - asset: assets/Cedarville.ttf
+
+    - family: Poppins-Reg
+      fonts:
+        - asset: assets/Poppins-Regular.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/Poppins-Bold.ttf
+
+    - family: Ducks
+      fonts:
+        - asset: assets/ducks.ttf
+
+    - family: SF-Pro-Text-Bold
+      fonts:
+        - asset: assets/SF-Pro-Text-Bold.otf
+
+    - family: Calibre-Semibold
+      fonts:
+        - asset: assets/Calibre-Semibold.otf
+
+    - family: CustomIcons
+      fonts:
+        - asset: assets/custom_icons.ttf
