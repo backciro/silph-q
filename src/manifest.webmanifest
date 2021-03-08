@@ -1,0 +1,41 @@
+{
+  "name": "SILPH Care",
+  "short_name": "SILPH Care",
+  "theme_color": "#605856",
+  "background_color": "#D0CCD0",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+//     {
+//       "src": "assets/icons/Icon-72.png",
+//       "sizes": "72x72",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "assets/icons/Icon-96.png",
+//       "sizes": "96x96",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "assets/icons/Icon-144.png",
+//       "sizes": "144x144",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "assets/icons/Icon-152.png",
+//       "sizes": "152x152",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "assets/icons/Icon-192.png",
+//       "sizes": "192x192",
+//       "type": "image/png"
+//     },
+    {
+      "src": "assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+::ng-deep *:focus,
+::ng-deep *:active,
+::ng-deep *:hover {
+  outline: none !important;
+}
+
+.company_title {
+  font-family: 'Orbitron', monospace !important;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 32px;
+  color: #605856;
+  width: 100%;
+  font-weight: 900 !important;
+  transition: all .2s linear;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.link {
+  font-family: 'Poppins' !important;
+  color: #274156 !important;
+  font-weight: 500 !important;
+
+  &:hover {
+    color: #1C6E8C !important;
+  }
+}
+
+::ng-deep .footer-heart nav {
+  font-size: 14px !important;
+  text-align: left !important;
+  font-weight: 500 !important;
+  font-family: 'Poppins' !important;
+  z-index: 999;
+}
+
+.spinner-box {
+  width: 100px !important;
+  height: 100px !important;
+  position: absolute !important;
+  right: 17.5% !important;
+  top: 40% !important;
+}
+
+::ng-deep nb-layout-column {
+  padding: 0 2rem !important;
+}
+
+::ng-deep nb-layout-header nav {
+  height: 46px !important;
+}
+
+::ng-deep nb-layout-footer nav {
+  border: none !important;
+  padding: .75rem !important;
+}
+
+::ng-deep .layout-container {
+  padding-top: 3rem !important;
+  min-height: 100vh;
+}

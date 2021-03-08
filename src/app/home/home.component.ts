@@ -1,0 +1,18 @@
+import {ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
+
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
+})
+export class HomeComponent implements OnInit {
+  constructor(
+    public cf: ChangeDetectorRef,
+    public zone: NgZone,
+  ) {
+  }
+
+  ngOnInit(): void {
+  }
+}

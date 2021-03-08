@@ -1,0 +1,13 @@
+# DEVELOPMENT
+#dispatch:
+#  - url: "dev.control.silph.tech/*"
+#    service: frontend-control
+#
+#  - url: "dev.data.silph.tech/*"
+#    service: frontend-datatrust
+
+
+# PRODUCTION
+dispatch:
+  - url: "care.silph.tech/*"
+    service: frontend-care

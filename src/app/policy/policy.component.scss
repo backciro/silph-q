@@ -1,0 +1,108 @@
+p.p1 {
+  margin: 0.0px 0.0px 11.3px 0.0px;
+  text-align: justify;
+  line-height: 16.8px;
+  font: 19.0px Helvetica;
+  color: #555
+}
+
+p.p2 {
+  margin: 0.0px 0.0px 11.3px 0.0px;
+  text-align: justify;
+  line-height: 16.8px;
+  font: 19.0px Helvetica;
+  color: #555;
+  min-height: 16.0px
+}
+
+p.p3 {
+  margin: 0.0px 0.0px 0.0px 0.0px;
+  text-indent: 16.0px;
+  font: 12.0px 'Proxima Nova';
+  color: #000000;
+  min-height: 14.0px
+}
+
+p.p4 {
+  margin: 0.0px 0.0px 11.3px 0.0px;
+  text-align: justify;
+  line-height: 16.8px;
+  font: 19.0px Helvetica;
+  color: #fff !important;
+}
+
+p.p5 {
+  margin: 0.0px 0.0px 11.3px 0.0px;
+  text-align: right;
+  line-height: 16.8px;
+  font: 19.0px Helvetica;
+  color: #555
+}
+
+li.li1 {
+  margin: 0.0px 0.0px 11.3px 0.0px;
+  text-align: justify;
+  line-height: 16.8px;
+  font: 19.0px Helvetica;
+  color: #555
+}
+
+span.s1 {
+  font-kerning: none
+}
+
+span.s2 {
+  font-kerning: none;
+  color: #555
+}
+
+span.s3 {
+  text-decoration: underline;
+  font-kerning: none;
+  color: #fff;
+  margin-left: 10px
+}
+
+span.s4 {
+  a & {
+    color: white !important;
+    text-decoration-color: white !important;
+  }
+
+  text-decoration: underline;
+  font-kerning: none;
+  color: #fff !important;
+}
+
+ol.ol1 {
+  list-style-type: decimal
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+#page-wrap {
+  width: 100vw;
+  height: 100vh;
+  perspective: 1500px;
+  perspective-origin: bottom;
+  overflow: auto;
+  color: #fff;
+  text-align: justify;
+}
+
+.text {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  font-size: 28px !important;
+  padding: 0;
+  width: calc(100% - 72px);
+}
+
+.text + .text {
+  z-index: 0;
+  color: #ccc;
+}
+

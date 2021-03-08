@@ -1,0 +1,13 @@
+.gcloudignore
+
+.git
+.gitignore
+
+.editorconfig
+
+node_modules/
+
+.vscode/
+.idea/
+e2e/
+src/

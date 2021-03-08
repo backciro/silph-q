@@ -1,0 +1,52 @@
+// import Nebular Theme System and the default theme
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+$nb-themes: nb-register-theme((
+  color-primary-100: rgb(228, 238, 241),
+  color-primary-200: rgb(187, 212, 221),
+  color-primary-300: rgb(142, 183, 198),
+  color-primary-400: rgb(96, 154, 175),
+  color-primary-500: rgb(62, 132, 157),
+  color-primary-600: rgb(28, 110, 140),
+  color-primary-700: rgb(25, 102, 132),
+  color-primary-800: rgb(20, 91, 121),
+  color-primary-900: rgb(17, 81, 111),
+  color-primary-1000: rgb(9, 63, 92),
+  color-primary-1100: rgb(144, 211, 255),
+
+  color-basic-100: #fbfcff,
+  color-basic-200: rgb(190, 198, 204),
+  color-basic-300: rgb(147, 160, 171),
+  color-basic-400: rgb(104, 122, 137),
+  color-basic-500: rgb(71, 94, 111),
+  color-basic-600: rgb(39, 65, 86),
+  color-basic-700: rgb(35, 59, 79),
+  color-basic-800: rgb(29, 50, 69),
+  color-basic-900: rgb(23, 42, 60),
+  color-basic-1000: rgb(14, 28, 43),
+  color-basic-1100: rgb(105, 174, 255),
+
+  background-basic-color-1: color-basic-200,
+  background-basic-color-2: color-basic-200,
+  background-basic-color-3: color-basic-300,
+  background-basic-color-4: color-basic-300,
+
+  border-basic-color-1: color-basic-700,
+  border-basic-color-2: color-basic-800,
+  border-basic-color-3: color-basic-900,
+  border-basic-color-4: color-basic-1000,
+  border-basic-color-5: color-basic-1100,
+
+  shadow: 0 0.5rem 1rem 0 rgba(25, 30, 51, 0.24),
+
+  text-disabled-color: color-basic-600,
+), "caretheme", default);
+
+
+// framework component styles
+@import '~@nebular/theme/styles/globals';
+// install the framework styles
+@include nb-install() {
+  @include nb-theme-global();
+}

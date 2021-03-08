@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8 formbox">
+    <div class="row">
+      <div class="col-9 label-col">
+        <label for="nameidentity">Nome Identificativo per lo Spot</label>
+      </div>
+      <div class="col-3 label-col-2">
+        <label>No Addr.</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 input-col">
+        <input id="nameidentity" fullWidth nbInput type="text" [(ngModel)]="nameidentity" [disabled]="!showQR">
+      </div>
+      <div class="col-3 input-col cbox-col">
+        <nb-checkbox fullWidth [(ngModel)]="checkedOpt" (checkedChange)="checkedOpt = !checkedOpt"
+                     [disabled]="!showQR"></nb-checkbox>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 label-col">
+        <label for="addresscode" *ngIf="checkedOpt">Codice Univoco per l'Affissione</label>
+        <label *ngIf="!checkedOpt">Indirizzo o Ragione Sociale</label>
+      </div>
+      <div class="col-3 label-col-2">
+        <label for="capacity">Capacità MAX</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 input-col">
+        <input id="addresscode" *ngIf="checkedOpt" nbInput fullWidth [(ngModel)]="uniqueAddress"
+               [disabled]="!showQR"/>
+        <app-autocomp *ngIf="!checkedOpt" (setAddress)="getEstablishmentAddress($event)"
+                      [disabled]="!showQR"></app-autocomp>
+      </div>
+      <div class="col-3 input-col">
+        <input id="capacity" nbInput fullWidth [(ngModel)]="capacity"
+               [disabled]="!showQR"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 confirm-col">
+        <button fullWidth nbButton class="gen-button" status="primary" (click)="submitForm()"
+                [disabled]="showSpinner || !nameidentity || (!uniqueAddress)">
+          GENERA CODICE QR
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--  <div *ngIf="showSpinner" [nbSpinner]="true" class="spinner-box"></div>-->
+  <div *ngIf="true" [nbSpinner]="true" class="spinner-box"></div>
+</div>

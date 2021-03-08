@@ -1,0 +1,22 @@
+runtime: python27
+service: frontend-care
+
+threadsafe: true
+api_version: 1
+
+handlers:
+  - url: /
+    static_files: dist/care-spot/index.html
+    upload: dist/care-spot/index.html
+
+  - url: /policy
+    static_files: dist/care-spot/index.html
+    upload: dist/care-spot/index.html
+
+  - url: /spot
+    static_files: dist/care-spot/index.html
+    upload: dist/care-spot/index.html
+
+  - url: /(.*)
+    static_files: dist/care-spot/\1
+    upload: dist/care-spot/(.*)

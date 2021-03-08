@@ -1,0 +1,188 @@
+.block-206 {
+  /**/
+}
+
+
+body {
+  background-color: #fff;
+  font-smoothing: antialiased;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 300;
+  color: #777;
+  margin-bottom: 0;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: #bbb;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+
+
+/*.content-container {border-top: 1px solid #000;}
+.document-container:first-child {border-top: 1px solid #000 !important;}
+*/
+.document-container {
+  border-bottom: 1px solid #000;
+  display: inline-flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.document-container__details--description p {
+  margin: 0;
+}
+
+
+.icons {
+  font-size: 0;
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 5px;
+}
+
+.icon::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0 2px;
+  transition: all 0.2s linear;
+  backface-visibility: hidden;
+}
+
+.icon {
+  background-color: #00a78e;
+}
+
+.icon::after {
+  background: linear-gradient(45deg, #00f4cf 50%, #FFF 50%);
+}
+
+.icon i::before {
+  content: '< >';
+}
+
+a[href$=".apk"], a[href$=".apk"] {
+  background-color: #1C6E8C;
+}
+
+a[href$=".apk"]::after, a[href$=".apk"]::after {
+  background: linear-gradient(45deg, rgba(42, 163, 207, 0.73) 50%, #FFF 50%);
+}
+
+a[href$=".apk"] i::before,
+a[href$=".apk"] i::before {
+  content: 'APK';
+}
+
+
+a[href$=".xls"], a[href$=".xlsx"] {
+  background-color: #0f9d58;
+}
+
+a[href$=".xls"]::after, a[href$=".xlsx"]::after {
+  background: linear-gradient(45deg, #16e37f 50%, #FFF 50%);
+}
+
+a[href$=".xls"] i::before,
+a[href$=".xlsx"] i::before {
+  content: '⊟';
+}
+
+a[href$=".ppt"], a[href$=".pptx"] {
+  background-color: #f5b707;
+}
+
+a[href$=".ppt"]::after, a[href$=".pptx"]::after {
+  background: linear-gradient(45deg, #facd4f 50%, #FFF 50%);
+}
+
+a[href$=".ppt"] i::before,
+a[href$=".pptx"] i::before {
+  content: '⧉';
+}
+
+
+.icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: block;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.icon i::before {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+}
+
+.icon i::before, .icon i::after {
+  display: block;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.icon i::after {
+  content: attr(title);
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.icon i::before, .icon i::after {
+  display: block;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.icon:hover {
+  border-radius: 2px 4px 2px 2px;
+}
+
+.icon:hover::after {
+  width: 12px;
+  height: 12px;
+}
+
+.icon:hover i::before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.icon:hover i::after {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
