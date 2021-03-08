@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "749059006665",
+    "firebase_url": "https://silph-care.firebaseio.com",
+    "project_id": "silph-care",
+    "storage_bucket": "silph-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749059006665:android:16047311b9a35365b3ad18",
+        "android_client_info": {
+          "package_name": "tech.silph.silphCareGuard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749059006665-sjg66h78uerv61eho2at7kabvv7eta7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.silph.silphCareGuard",
+            "certificate_hash": "d0f6a7645cd16e67efdef208582fa909903039da"
+          }
+        },
+        {
+          "client_id": "749059006665-ocqn6prj6fc4vh4go8bohflpdabdogcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW085Pjyk-p5-c18jRd5PoWC7MyEOfuPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749059006665-ocqn6prj6fc4vh4go8bohflpdabdogcm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "749059006665-dm8ss0sv4lrmpcgu161kkpcffnuold1h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "tech.silph.silphCareGuard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

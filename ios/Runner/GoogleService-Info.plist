@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>749059006665-dm8ss0sv4lrmpcgu161kkpcffnuold1h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.749059006665-dm8ss0sv4lrmpcgu161kkpcffnuold1h</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>749059006665-sjg66h78uerv61eho2at7kabvv7eta7c.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyArLKR4-Iw7mlS-zJaz3u1ZlbeWj65YBQI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>749059006665</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tech.silph.silphCareGuard</string>
+	<key>PROJECT_ID</key>
+	<string>silph-care</string>
+	<key>STORAGE_BUCKET</key>
+	<string>silph-care.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:749059006665:ios:407d4bc45ea3f5b1b3ad18</string>
+	<key>DATABASE_URL</key>
+	<string>https://silph-care.firebaseio.com</string>
+</dict>
+</plist>

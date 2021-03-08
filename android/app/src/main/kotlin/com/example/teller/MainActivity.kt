@@ -1,4 +1,4 @@
-package tech.silph.silphq
+package tech.silph.silphCareGuard
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
