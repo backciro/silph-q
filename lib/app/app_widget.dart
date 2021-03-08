@@ -6,13 +6,15 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SILPH Q',
+      title: 'SILPH CARE',
       darkTheme: ThemeData(
-        primaryColor: Color(0xFFD0CCD0),
-        canvasColor: Color(0xFF1C6E8C),
+        accentColor: Color(0xFF274156),
+        primaryColor: Color(0xFF1C6E8C),
+        canvasColor: Color(0xFFD0CCD0),
         fontFamily: 'Poppins-Reg',
       ),
       theme: ThemeData(
+        accentColor: Color(0xFF274156),
         primaryColor: Color(0xFF1C6E8C),
         canvasColor: Color(0xFFD0CCD0),
         fontFamily: 'Poppins-Reg',

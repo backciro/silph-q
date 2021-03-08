@@ -1,103 +1,153 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:collection/collection.dart';
 
 class QuestionFormWidget extends StatefulWidget {
+  final Function saveElement;
+
+  QuestionFormWidget({this.saveElement});
+
   @override
   _QuestionFormWidgetState createState() => _QuestionFormWidgetState();
 }
 
 class _QuestionFormWidgetState extends State<QuestionFormWidget> {
-  final _formKey = GlobalKey<FormState>();
-  final _user = User();
+  final _formKey = new GlobalKey<FormState>();
+  Survey _survey = new Survey();
+  Function eq = const ListEquality().equals;
+
+  checkAnswers(List<bool> answers) {
+    if (eq(answers, Survey.A4)) return 4;
+    if (eq(answers, Survey.A16)) return 16;
+    if (eq(answers, Survey.A25)) return 25;
+    if (eq(answers, Survey.A36)) return 36;
+    if (eq(answers, Survey.A45)) return 45;
+    if (eq(answers, Survey.A90)) return 90;
+    if (answers[0] == true)
+      return 4;
+    else
+      return 36;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    for (var i = 0; i < 4; i++) _survey.answers[i] = false;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Health Checklist'),
-          backgroundColor: Color(0xFF274156),
+      appBar: AppBar(
+        title: Text(
+          'Autovalutazione',
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFD0CCD0),
+          ),
         ),
-        body: SingleChildScrollView(
-          child: Container(
-              color: Color(0xFFD0CCD0),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-              child: Builder(
-                  builder: (context) => Form(
-                      key: _formKey,
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            TextFormField(
-                              decoration:
-                                  InputDecoration(labelText: 'First name'),
-                              validator: (value) {
-                                if (value.isEmpty) {
-                                  return 'Please enter your first name';
-                                }
-                              },
-                              onSaved: (val) =>
-                                  setState(() => _user.firstName = val),
-                            ),
-                            TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: 'Last name'),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Please enter your last name.';
-                                  }
-                                },
-                                onSaved: (val) =>
-                                    setState(() => _user.lastName = val)),
-                            Container(
-                              padding: const EdgeInsets.fromLTRB(0, 50, 0, 20),
-                              child: Text('Subscribe'),
-                            ),
-                            SwitchListTile(
-                                title: const Text('Monthly Newsletter'),
-                                value: _user.newsletter,
-                                onChanged: (bool val) =>
-                                    setState(() => _user.newsletter = val)),
-                            Container(
-                              padding: const EdgeInsets.fromLTRB(0, 50, 0, 20),
-                              child: Text('Interests'),
-                            ),
-                            CheckboxListTile(
-                                title: const Text('Cooking'),
-                                value: _user.passions[User.PassionCooking],
-                                onChanged: (val) {
-                                  setState(() => _user
-                                      .passions[User.PassionCooking] = val);
-                                }),
-                            CheckboxListTile(
-                                title: const Text('Traveling'),
-                                value: _user.passions[User.PassionTraveling],
-                                onChanged: (val) {
-                                  setState(() => _user
-                                      .passions[User.PassionTraveling] = val);
-                                }),
-                            CheckboxListTile(
-                                title: const Text('Hiking'),
-                                value: _user.passions[User.PassionHiking],
-                                onChanged: (val) {
-                                  setState(() =>
-                                      _user.passions[User.PassionHiking] = val);
-                                }),
-                            Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 16.0, horizontal: 16.0),
-                                child: RaisedButton(
-                                    onPressed: () {
-                                      final form = _formKey.currentState;
-                                      if (form.validate()) {
-                                        form.save();
-                                        _user.save();
-                                        _showDialog(context);
-                                      }
-                                    },
-                                    child: Text('Save'))),
-                          ])))),
-        ));
+        backgroundColor: Color(0xFF274156),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          color: Color(0xFFD0CCD0),
+          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+          child: Builder(
+            builder: (context) => Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+                    child: Text(
+                      'Rispondi a qualche domanda per capire il tuo stato generale di salute.\n'
+                      'Le tue risposte verranno valutate da un algoritmo sul tuo cellulare.\n'
+                      'Il risultato sarà un numero su una scala da uno a tre che indicherà il tuo grado di contagiosità.',
+                      textAlign: TextAlign.justify,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                  ),
+                  CheckboxListTile(
+                      dense: true,
+                      title: const Text(
+                        Survey.Q1,
+                        textAlign: TextAlign.left,
+                      ),
+                      activeColor: Color(0xFF274156),
+                      checkColor: Color(0xFFD0CCD0),
+                      value: _survey.answers[0],
+                      onChanged: (val) {
+                        setState(() => _survey.answers[0] = val);
+                      }),
+                  CheckboxListTile(
+                      dense: true,
+                      title: const Text(
+                        Survey.Q2,
+                        textAlign: TextAlign.left,
+                      ),
+                      activeColor: Color(0xFF274156),
+                      checkColor: Color(0xFFD0CCD0),
+                      value: _survey.answers[1],
+                      onChanged: (val) {
+                        setState(() => _survey.answers[1] = val);
+                      }),
+                  CheckboxListTile(
+                      dense: true,
+                      title: const Text(
+                        Survey.Q3,
+                        textAlign: TextAlign.left,
+                      ),
+                      activeColor: Color(0xFF274156),
+                      checkColor: Color(0xFFD0CCD0),
+                      value: _survey.answers[2],
+                      onChanged: (val) {
+                        setState(() => _survey.answers[2] = val);
+                      }),
+                  CheckboxListTile(
+                      dense: true,
+                      title: const Text(
+                        Survey.Q4,
+                        textAlign: TextAlign.left,
+                      ),
+                      activeColor: Color(0xFF274156),
+                      checkColor: Color(0xFFD0CCD0),
+                      value: _survey.answers[3],
+                      onChanged: (val) {
+                        setState(() => _survey.answers[3] = val);
+                      }),
+                  Container(
+                    color: Color(0xFFD0CCD0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 64.0, horizontal: 16.0),
+                    child: RaisedButton(
+                      onPressed: () {
+                        final form = _formKey.currentState;
+                        if (form.validate()) {
+                          form.save();
+                          widget.saveElement(checkAnswers(_survey.answers));
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: Text(
+                        'SALVA',
+                        style: TextStyle(
+                            color: Color(0xFF274156),
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 2),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   _showDialog(BuildContext context) {
@@ -106,20 +156,25 @@ class _QuestionFormWidgetState extends State<QuestionFormWidget> {
   }
 }
 
-class User {
-  static const String PassionCooking = 'cooking';
-  static const String PassionHiking = 'hiking';
-  static const String PassionTraveling = 'traveling';
-  String firstName = '';
-  String lastName = '';
-  Map passions = {
-    PassionCooking: false,
-    PassionHiking: false,
-    PassionTraveling: false
-  };
-  bool newsletter = false;
+class Survey {
+  static const String Q1 = 'Non sono MAI uscito di casa negli ultimi 5 giorni';
+  static const String Q2 = 'Ho SEMPRE usato la mascherina';
+  static const String Q3 = 'Ho SEMPRE usato i guanti protettivi';
+  static const String Q4 =
+      'Non ho starnutito o tossito mentre ero in un luogo pubblico';
 
-  save() {
-    print('saving user using a web service');
+  static const List<bool> A4 = [true, true, true, true];
+  static const List<bool> A16 = [false, true, true, true];
+  static const List<bool> A25 = [false, true, false, true];
+  static const List<bool> A36 = [false, false, true, false];
+  static const List<bool> A45 = [false, false, false, true];
+  static const List<bool> A90 = [false, false, false, false];
+
+  List<bool> answers;
+
+  Survey() {
+    answers = new List(4);
   }
+
+  bool newsletter = false;
 }
